@@ -22,6 +22,13 @@ class musketeerManager
         return $musketeers;
     }
 
+    /**
+     * Récupère tous les mousquetaires et les stocke dans un tableau
+     *
+     * @param array $data Tableau contenant les mousquetaires
+     * @param int $int_min intelligence minimale
+     * @return array Tableau contenant les mousquetaires
+     */
     private function getAllMusketeers($data, $int_min) : array{
         $musketeers = array();
         foreach ($data as $musketeer) {

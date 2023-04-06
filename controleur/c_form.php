@@ -1,6 +1,8 @@
 <?php
     if (isset($_POST['immat'])) {
-        echo "<script>console.log('GGGGGGGG');</script>";
+        $immat = $_POST['immat'];
+    }else{
+        $immat = "";
     }
 
 include("$racine/vue/nav.php");

@@ -4,10 +4,10 @@
             Location de véhicule
         </legend>
         <label for="immat">Immatriculation </label>
-        <input type="text" id="immat" name="immat">
+        <input type="text" id="immat" name="immat" value="<?php echo $immat ?>">
         <br> <br>
         <label for="type">Type </label>
-        <select id="type" name="type" required>
+        <select id="type" name="type">
             <option value="">-- Choisissez un type --</option>
             <option value="touristique">Touristique</option>
             <option value="pro">Professionnel</option>

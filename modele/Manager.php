@@ -11,7 +11,7 @@ class Manager
     {
         $login = "root";
         $mdp = "";
-        $bd = "Musketeer";
+        $bd = "cpe_php";
         $serveur = "localhost";
 
         try
