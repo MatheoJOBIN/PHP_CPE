@@ -18,4 +18,5 @@ function chargerModeles($racine) {
     require_once("$racine/modele/Manager.php");
     require_once("$racine/modele/musketeer.php");
     require_once("$racine/modele/musketeerManager.php");
+    require_once("$racine/modele/formManager.php");
 }

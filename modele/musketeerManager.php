@@ -2,51 +2,33 @@
 class musketeerManager
 {
     /**
-     * Récupère un mousquetaire par son id
+     * Récupère un mousquetaire par son id, ou la liste de tous les mousquetaires
      *
      * @param int $id Id du mousquetaire
      * @param int $int_min Intelligence minimale (optionnel)
      * @return void
      */
-    public function getMusketeerById(int $id, int $int_min) : void {
+    public function getMusketeerById(int $id, int $int_min) : array {
         global $data;
         if ($id < 1 || $id > count($data)) {
-            $this->showAllMusketeers($data, $int_min);
+            $musketeers = $this->getAllMusketeers($data, $int_min);
         } else {
             foreach ($data as $musketeer) {
-                if ($musketeer->getId() == $id) {
-                    $this->showMusketeer($musketeer, $int_min);
-                    break;
+                if ($musketeer->getId() == $id && $musketeer->getIntelligence() >= $int_min) {
+                    $musketeers = array($musketeer);
                 }
             }
         }
+        return $musketeers;
     }
 
-    /**
-     * Affiche un mousquetaire
-     *
-     * @param Musketeer $musketeer Mousquetaire à afficher
-     * @param int $int_min Intelligence minimale
-     * @return void
-     */
-    private function showMusketeer(Musketeer $musketeer, int $int_min) : void {
-        echo "<script>console.log('int min: " . $int_min . ", intelligence: ".$musketeer->getIntelligence()."');</script>";
-        if ((int) $musketeer->getIntelligence() >= $int_min) {
-            $musketeer->print();
+    private function getAllMusketeers($data, $int_min) : array{
+        $musketeers = array();
+        foreach ($data as $musketeer) {
+            if ($musketeer->getIntelligence() >= $int_min) {
+                $musketeers[] = $musketeer;
+            }
         }
-    }
-    
-    /**
-     * affiche tous les mousquetaires
-     *
-     * @param array $musketeers Lsite des mousquetaires à afficher
-     * @param int $int_min Intelligence minimale
-     * @return void
-     */
-    private function showAllMusketeers(array $musketeers, int $int_min) : void {
-        foreach ($musketeers as $musketeer) {
-            $this->showMusketeer($musketeer, $int_min);
-            echo "<br>";
-        }
+        return $musketeers;
     }
 }

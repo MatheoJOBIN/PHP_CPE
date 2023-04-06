@@ -1,9 +1,4 @@
-<?php
-    if (isset($_GET['immat'])) {
-        echo "<script>console.log('GGGGGGGG' );</script>";
-    }
-?>
-<form action="./form.php" method="GET">
+<form action="./?action=form.php" method="GET">
     <fieldset>
         <legend>
             Location de véhicule
