@@ -1,4 +1,4 @@
-<form action="./?action=form.php" method="GET">
+<form action="./?action=form" method="POST">
     <fieldset>
         <legend>
             Location de véhicule
