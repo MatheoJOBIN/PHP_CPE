@@ -5,31 +5,34 @@
         </legend>
         <label for="immat">Immatriculation </label>
         <input type="text" id="immat" name="immat" value="<?php echo $immat ?>">
+        <span class="error">* <?php echo $immatErr;?>
         <br> <br>
         <label for="type">Type </label>
-        <select id="type" name="type">
+        <select id="type" name="type" value="select">
             <option value="">-- Choisissez un type --</option>
-            <option value="touristique">Touristique</option>
-            <option value="pro">Professionnel</option>
-            <option value="escale">Escale</option>
+            <option value="Touristique" <?php if($option == 'Touristique') echo 'selected'; ?>>Touristique</option>
+            <option value="Pro" <?php if($option == 'Pro') echo 'selected'; ?>>Professionnel</option>
+            <option value="Escale" <?php if($option == 'Escale') echo 'selected'; ?>>Escale</option>
         </select>
         <br> <br>
         <label>Energie</label>
         <ul>
-            <li>Essence<input type="checkbox" name="Essence"></li>
-            <li>Diesel<input type="checkbox" name="Diesel"></li>
-            <li>GPL<input type="checkbox" name="GPL"></li>
-            <li>Bioéthanol<input type="checkbox" name="Bioéthanol"></li>
+            <li>Essence<input type="checkbox" name="Essence" <?php if($Essence) echo 'checked'; ?>></li>
+            <li>Diesel<input type="checkbox" name="Diesel" <?php if($Diesel) echo 'checked'; ?>></li>
+            <li>GPL<input type="checkbox" name="GPL" <?php if($GPL) echo 'checked'; ?>></li>
+            <li>Bioéthanol<input type="checkbox" name="Bioéthanol" <?php if($Bio) echo 'checked'; ?>></li>
         </ul>
         <br> <br>
         <label for="km">Kilométrage</label>
-        <input type="text" id="km" name="km">
+        <input type="text" id="km" name="km" value="<?php echo $km ?>">
+        <span class="error">* <?php echo $kmErr;?>
         <br> <br>
         <label for="nbJ">Nombre de jours</label>
-        <input class="quantity" type="number" min="1" id="nbJ" name="nbJ">
+        <input class="quantity" type="number" min="1" id="nbJ" name="nbJ" value="<?php echo $nbJ ?>">
+        <span class="error">* <?php echo $nbJErr;?>
         <br> <br>
         <label for="assurance">Assurance</label>
-        <input id="assurance" type="checkbox" name="assurance">
+        <input id="assurance" type="checkbox" name="Assu" <?php if($Assu) echo 'checked'; ?>>
         <br> <br>
         <input type="submit" value="Réinitialiser">
         <input type="submit" value="Valider">
