@@ -1,6 +1,8 @@
 <?php
     if (isset($_POST['immat'])) {
         $immat = $_POST['immat'];
+    }else{
+        $immat = "";
     }
     if (empty($_POST["immat"])) {
         $immatErr = "immat is required";
@@ -28,6 +30,8 @@
 
     if (isset($_POST['km'])){
         $km = $_POST['km'];
+    }else{
+        $km = "";
     }
     if(empty($_POST["km"])){
         $kmErr = "km is required";
